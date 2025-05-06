@@ -4,68 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Consultório Dra. Tainan Ribeiro</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f6f8;
-    }
-    header {
-      background-color: #2e7d32;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #2e7d32;
-    }
-    form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      margin-top: 20px;
-      background-color: #2e7d32;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #27632a;
-    }
-    @media (max-width: 600px) {
-      main {
-        padding: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Consultório Dra. Tainan Ribeiro</h1>
-    <p>Atendimento com excelência e cuidado</p>
+    <p>Consultoria Online e Atendimento Humanizado</p>
   </header>
   <main>
     <h2>Ficha de Atendimento</h2>
@@ -105,17 +49,10 @@
 
       <button type="submit">Enviar Ficha</button>
     </form>
-    <div id="mensagemSucesso" style="display:none; margin-top:20px; color: green;">
+    <div id="mensagemSucesso" class="success-message">
       Ficha enviada com sucesso!
     </div>
   </main>
-  <script>
-    document.getElementById('fichaForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Aqui você pode adicionar o código para enviar os dados para um servidor ou armazená-los conforme necessário.
-      document.getElementById('mensagemSucesso').style.display = 'block';
-      this.reset();
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
