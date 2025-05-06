@@ -3,56 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Consultório Dra. Tainan Ribeiro</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Login - Dra. Tainan Ribeiro</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      animation: fadeIn 1.5s ease-in;
+    }
+    .login-container {
+      background-color: #1e1e1e;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      animation: slideIn 1s ease-out;
+    }
+    .login-container h2 {
+      margin-bottom: 30px;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background-color: #2c2c2c;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00695c;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #aaa;
+    }
+    .photo-space {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+    .photo-space p {
+      font-size: 0.8em;
+      color: #555;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Consultório Dra. Tainan Ribeiro</h1>
-    <p>Consultoria Online e Atendimento Humanizado</p>
-  </header>
-  <main>
-    <h2>Ficha de Atendimento</h2>
-    <form id="fichaForm">
-      <label for="nomePaciente">Nome do Paciente:</label>
-      <input type="text" id="nomePaciente" name="nomePaciente" required />
-
-      <label for="dataConsulta">Data da Consulta:</label>
-      <input type="date" id="dataConsulta" name="dataConsulta" required />
-
-      <label for="nome">Nome Completo:</label>
-      <input type="text" id="nome" name="nome" required />
-
-      <label for="idade">Idade:</label>
-      <input type="number" id="idade" name="idade" required />
-
-      <label for="dataNascimento">Data de Nascimento:</label>
-      <input type="date" id="dataNascimento" name="dataNascimento" required />
-
-      <label for="telefone">Telefone:</label>
-      <input type="tel" id="telefone" name="telefone" required />
-
-      <label for="queixaPrincipal">Queixa Principal:</label>
-      <textarea id="queixaPrincipal" name="queixaPrincipal" rows="3" required></textarea>
-
-      <label for="bioImpedancia">Bioimpedância:</label>
-      <textarea id="bioImpedancia" name="bioImpedancia" rows="2"></textarea>
-
-      <label for="ressonanciaQuantica">Ressonância Quântica:</label>
-      <textarea id="ressonanciaQuantica" name="ressonanciaQuantica" rows="2"></textarea>
-
-      <label for="plano">Plano:</label>
-      <input type="text" id="plano" name="plano" />
-
-      <label for="retorno">Retorno:</label>
-      <input type="text" id="retorno" name="retorno" />
-
-      <button type="submit">Enviar Ficha</button>
+  <div class="login-container">
+    <h2>Bem-vindo ao Consultório da Dra. Tainan Ribeiro</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="E-mail" required />
+      <input type="password" id="senha" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
     </form>
-    <div id="mensagemSucesso" class="success-message">
-      Ficha enviada com sucesso!
+    <div class="footer">
+      <p>Não tem conta? <a href="#" style="color:#80cbc4">Cadastre-se</a></p>
     </div>
-  </main>
-  <script src="script.js"></script>
+  </div>
+  <div class="photo-space">
+    <p>Espaço reservado para adicionar uma imagem ou logotipo</p>
+  </div>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+      if (email && senha) {
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Por favor, preencha todos os campos.');
+      }
+    });
+  </script>
 </body>
 </html>
