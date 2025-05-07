@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultório - Dra. Tainan Ribeiro</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header>
+    <h1>Consultório da Dra. Tainan Ribeiro</h1>
+  </header>
+  <nav>
+    <a href="#" onclick="showTab('cadastro')">Cadastro</a>
+    <a href="#" onclick="showTab('retorno')">Retorno</a>
+  </nav>
+  <main>
+    <section class="form-section" id="cadastro">
+      <h2>Cadastro de Paciente</h2>
+      <form>
+        <label>Nome:</label>
+        <input type="text" required>
+        <label>Idade:</label>
+        <input type="number" required>
+        <label>Data de nascimento:</label>
+        <input type="date" required>
+        <label>Telefone:</label>
+        <input type="tel" required>
+        <label>Queixa principal:</label>
+        <textarea required></textarea>
+        <label>Bioimpedância:</label>
+        <textarea></textarea>
+        <label>Ressonância quântica:</label>
+        <textarea></textarea>
+        <label>Plano:</label>
+        <input type="text">
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+
+    <section class="form-section hidden" id="retorno">
+      <h2>Retorno de Paciente</h2>
+      <form>
+        <label>Nome do paciente:</label>
+        <input type="text" required>
+        <button type="submit">Buscar</button>
+      </form>
+    </section>
+
+    <div class="photo-space">
+      <h3>Espaço para adicionar fotos do consultório</h3>
+      <p>Adicione imagens aqui para apresentar o ambiente da consulta.</p>
+    </div>
+  </main>
+  <script src="dashboard.js"></script>
+</body>
+</html>
